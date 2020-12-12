@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Totssy.Models.Product>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row" style="margin-top:150px;">
+    @{
+        foreach (var item in Model)
+        {
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0" id="product_id" style="margin-bottom:15px;">
+                <!-- Card-->
+                <div class="card rounded shadow-sm border-0" id="product_card" onmouseover="change_background_color()">
+                        <div class="card-body p-4">
+                            <img src="@Html.Raw(item.Img)" width="150" height="150" class="productphoto">
+                              <h5> <a class="Productnamelink text-light3" asp-action="product_details" asp-route-Name=@item.Name asp-controller="Home" style="font-size:16px; text-align:center;">@item.Name</a></h5>
+                            <p class="small text-muted font-italic" style="font-size:19px;  font-weight:700;">$@item.Price</p>
+                            
+                        </div>
+                </div>
+            </div>
+
+        }
+
+
+    }
+</div>
