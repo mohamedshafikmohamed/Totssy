@@ -1,0 +1,138 @@
+﻿<form method="post" action="https://poplme.co" enctype="multipart/form-data" id="EditProfile">
+    <div class="container mb-3">
+        <br>
+        <div class="row">
+            <div class="col-md-3 col-xs-12 col-lg-3"></div>
+            <div class="col-md-6 col-xs-12 col-lg-6">
+                <div class="profile-photo-wrapper" style="margin-top: 50px" onclick="choosePhoto(1)"><i class="fa fa-user" style="padding-bottom: -10px"></i><!--<img alt="rippl" class="dropPhoto" src="https://poplme.co/assets/frontend/images/icons/just_drop.png">--></div>
+                <input type="file" accept="image/*" class="sPhoto" name="file" data-profile-num="1" style="display: none" id="sPhoto1">
+                <a class="ChangePhoto" href="javascript:choosePhoto(1)"> Change Photo</a>
+            </div>
+            <div class="col-md-3 col-xs-12 col-lg-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-xs-12 col-lg-3"></div>
+            <div class="col-md-6 col-xs-12 col-lg-6">
+                <label class="proxima">Profile Name</label>
+                <input type="text" maxlength="30" required="" style="border: 0" name="sName" class="form-control mb-3 proxima-nova-black" placeholder="Profile Name" value="mohamed shafik">
+            </div>
+            <div class="col-md-3 col-xs-12 col-lg-3"></div>
+        </div>
+        <div class="row" style="display: none">
+            <div class="col-md-3 col-xs-12 col-lg-3"></div>
+            <div class="col-md-6 col-xs-12 col-lg-6">
+                <label class="proxima">Email</label>
+                <input type="email" required="" name="sEmail" id="sEmail" class="form-control mb-3 proxima-nova-black" placeholder="Email" value="mohamedalaa447447@gmail.com">
+            </div>
+            <div class="col-md-3 col-xs-12 col-lg-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-xs-12 col-lg-3"></div>
+            <div class="col-md-6 col-xs-12 col-lg-6">
+                <label class="proxima">Bio</label>
+                <textarea id="bio" maxlength="70" rows="3" class="ProfileDescription" name="sDescription" placeholder="My Bio"></textarea>
+            </div>
+            <div class="col-md-3 col-xs-12 col-lg-3"></div>
+        </div>
+        <!--<div class="row">
+             <div class="col-md-3 col-xs-12 col-lg-3"></div>
+             <div class="col-md-6 col-xs-12 col-lg-6">
+                 <label class="proxima">Ambassador</label>
+                 <textarea id="sAmbassador" maxlength="70" rows="3" class="ProfileDescription" name="sAmbassador" placeholder="Ambassador" class="form-control"></textarea>
+             </div>
+             <div class="col-md-3 col-xs-12 col-lg-3"></div>
+         </div> -->
+        <input type="hidden" name="bIsDirect" id="bIsDirect" value="1">
+        <div class="row">
+            <div class="col-md-3 col-xs-12 col-lg-3"></div>
+            <div class="col-md-6 col-xs-12 col-lg-6">
+                <div class="form-group">
+                    <label class="form-check-label proxima-nova MakePublic" for="bIsStatPrivate">Make profile public</label>
+                    <label class="switch">
+                        <input type="checkbox" name="bIsStatPrivate" id="bIsStatPrivate" checked="" value="1">
+                        <span class="slider round"></span>
+                    </label>
+                    <small class="form-text private_text proxima-nova SmallNotice" style="color: black">When your profile is public, others can access your profile using the link:<br><b>poplme.co/mohamed-shafik</b></small>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-12 col-lg-3"></div>
+        </div>
+
+        <div id="Sortable" class="ui-sortable">
+            <div class="row Draggable">
+                <div class="col-md-3 col-xs-12 col-lg-3"></div>
+                <div class="col-md-6 col-xs-12 col-lg-6">
+                    <div class="row">
+                        <div class="col-md-10 col-sm-9 col-lg-10 Width90">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <img src="https://poplme.co/assets/frontend/images/icons/facebookicon.png" class="fa-bars ui-sortable-handle">
+                                </div>
+                                <input type="text" id="a41e91ed5d663783f06af5199281c877" value="https://www.facebook.com/MohamedShafikMohamed/" name="aValues[]" class="form-control mb-3 lb-none" placeholder="Facebook profile link" autocapitalize="none">
+                                <input type="text" value="Facebook" name="aTitles[]" class="form-control mb-3 lb-none" placeholder="Facebook" autocapitalize="none" style="display: none">
+                                <i class="fa fa-remove RemoveBtn" onclick="ClearField('a41e91ed5d663783f06af5199281c877')"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-lg-2 align-center Width10">
+                            <div class="Info align-center" href="#" data-toggle="popover" data-placement="left" data-html="true" title="" data-content="Go to facebook.com and open your Facebook profile or page. Then copy and paste the url link here." data-original-title="Facebook profile link"><i class="fa fa-info-circle"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12 col-lg-3"></div>
+                <input type="hidden" name="aHashes[]" value="jHquN">
+                <input type="hidden" name="aLinksIDs[]" value="6">
+                <input type="hidden" name="aNums[]" value="1">
+            </div>
+            <div class="row Draggable">
+                <div class="col-md-3 col-xs-12 col-lg-3"></div>
+                <div class="col-md-6 col-xs-12 col-lg-6">
+                    <div class="row">
+                        <div class="col-md-10 col-sm-9 col-lg-10 Width90">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <img src="https://poplme.co/assets/frontend/images/icons/insta.png" class="fa-bars ui-sortable-handle">
+                                </div>
+                                <input type="text" id="1650289b5d1ca6b4ea4cac7960e9562b" value="" name="aValues[]" class="form-control mb-3 lb-none" placeholder="Instagram username" autocapitalize="none">
+                                <input type="text" value="Instagram" name="aTitles[]" class="form-control mb-3 lb-none" placeholder="Instagram" autocapitalize="none" style="display: none">
+                                <i class="fa fa-remove RemoveBtn" onclick="ClearField('1650289b5d1ca6b4ea4cac7960e9562b')"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-lg-2 align-center Width10">
+                            <div class="Info align-center" href="#" data-toggle="popover" data-placement="left" data-html="true" title="" data-content="Open the Instagram app and go to your profile. Your Instagram username will be at the top of your screen." data-original-title="Instagram link"><i class="fa fa-info-circle"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12 col-lg-3"></div>
+                <input type="hidden" name="aHashes[]" value="">
+                <input type="hidden" name="aLinksIDs[]" value="3">
+                <input type="hidden" name="aNums[]" value="0">
+            </div>
+            <div class="row Draggable">
+                <div class="col-md-3 col-xs-12 col-lg-3"></div>
+                <div class="col-md-6 col-xs-12 col-lg-6">
+                    <div class="row">
+                        <div class="col-md-10 col-sm-9 col-lg-10 Width90">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <img src="https://poplme.co/assets/frontend/images/icons/snapchat.png" class="fa-bars ui-sortable-handle">
+                                </div>
+                                <input type="text" id="6e9e3673bd3035a296a6ed608630d869" value="" name="aValues[]" class="form-control mb-3 lb-none" placeholder="Snapchat username" autocapitalize="none">
+                                <input type="text" value="Snapchat" name="aTitles[]" class="form-control mb-3 lb-none" placeholder="Snapchat" autocapitalize="none" style="display: none">
+                                <i class="fa fa-remove RemoveBtn" onclick="ClearField('6e9e3673bd3035a296a6ed608630d869')"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-lg-2 align-center Width10">
+                            <div class="Info align-center" href="#" data-toggle="popover" data-placement="left" data-html="true" title="" data-content="Open Snapchat and tap your profile picture in the top left corner. Your username is below your Snapchat name." data-original-title="Snapchat username"><i class="fa fa-info-circle"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12 col-lg-3"></div>
+                <input type="hidden" name="aHashes[]" value="">
+                <input type="hidden" name="aLinksIDs[]" value="4">
+                <input type="hidden" name="aNums[]" value="0">
+            </div>
+         
+    <br>
+    <input type="hidden" name="iProfileNum" value="1">
+    <input type="hidden" name="sAction" value="UpdateProfile">
+</form>

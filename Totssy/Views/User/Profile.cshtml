@@ -1,0 +1,86 @@
+﻿<div class="swiper-wrapper" id="swiper-wrapper-95c98f1d5788cc96" aria-live="polite">
+    <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 2" style="width: 668px; z-index: 2; transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg);">
+        <div class="container" style="padding: 0">
+            <div class="row" style="margin: 0">
+                <div class="col-md-6 col-xs-12 col-lg-6" style="margin: 0 auto; display: block">
+                    <div class="profile">
+                        <form method="post" action="https://poplme.co" enctype="multipart/form-data" id="UploadProfilePhoto1">
+                            <input type="file" accept="image/*" class="sPhoto" data-profile-num="1" name="file" style="display: none" id="sPhoto1">
+                            <input type="hidden" name="sAction" value="UploadProfilePhoto">
+                        </form>
+                        <div id="profile-image" class="profile-image">
+                            <!--<form method="post" action="https://poplme.co" enctype="multipart/form-data" id="UploadProfilePhoto">-->
+                            <div onclick="edit()"><img alt="profile picture" id="profile_picture_id" src="https://poplme.co/assets/frontend/images/icons/user.png"></div>
+                            <input type="file" accept="image/*" name="file" style="display: none" id="sPhoto">
+                            <input type="hidden" name="sAction" value="UploadProfilePhoto">
+                            <span style="display: block; padding-top: 3px; text-align: center" class="bio"><b>pops: 0</b></span>
+                        </div>
+                        <div style="padding: 5px"></div>     <div class="NewName" style="font-size: 26px !important">
+                            <a id="nameWebview" style="text-align: left">mohamed shafik</a>
+                        </div>
+                        <p id="bio_change" onclick="edit()" class="bio" style="text-align: left; margin-right: 10px; margin-bottom: 10px; line-height: 21px"></p>
+
+                    </div>
+                    <div class="d-flex flex-row bd-highlight justify-content-center" style="margin-left: 4.8%; margin-right: 4.8%">
+                        <button id="direct1" class="btn btn-primary AddBtn toggle_direct red" style="color: black; margin: 0 15px; margin-right: 0px;"><b>Direct on</b></button>
+
+                        <button id="edit" onclick="edit()" class="btn btn-primary AddBtn edit_button"><b>Edit Profile</b></button>
+                    </div>
+                    <p class="direct_info" id="direct_info" style="display: block">Your Popl opens directly to your first link</p>
+                    <p class="profile_info" id="profile_info">Your Popl opens to your social profile</p>
+                    <div class="notProBusiness1" style="display: none;" onclick="BuyPoplPro()">
+                        <div class="shadowBusiness" style="margin-top: 20px; margin-left: 8.7%; margin-right: 8.7%; height: 100px; text-align: center; background-color: white">
+                            <a style=" height: 100px; text-align: center; display: flex; justify-content: center; align-items: center; font-size: 22px" id="add_grid">
+                                <!--<img id="add" class="shadow" alt="add social link" style="width: 100%; height: 100%;" src="https://poplme.co/assets/frontend/images/icons/plusicon.png">-->
+                                Add to business profile <i style="padding-left: 10px" class="fas fa-plus"></i>
+                            </a>
+                            <img alt="Popl Pro" class="shadow" style="position: absolute; width: 38px; height: 38px; right: 40px; top: 220px" src="https://poplme.co/assets/frontend/images/icons/Probutton.png">
+                        </div>
+                    </div>
+                    <div id="ProfileWrapper">
+                        <form method="post" action="https://poplme.co" enctype="multipart/form-data" id="EditProfile1">
+                            <div id="LinksWrapper1" class="flex-row LinksWrapper" style="text-align: center; padding-top: 1px; overflow: hidden;">
+                                <div id="gridDemo1" class="flex-row" style="text-align: center; padding-top: 1px; overflow: hidden;">
+
+                                    <div class="grid-square" data-link-id="6" data-link-hash="jHquN">
+                                        <span href="test" onclick="remove('Facebook')" class="close"><i class="fa fa-times-circle"></i></span>
+                                        <a rel="noopener" target="_blank" onclick="OpenEditLinkDialog(6,'jHquN', '0', 'Facebook')" class="socialTitles">
+
+                                            <img alt="facebook logo in blue" class="shadow" style="width: 100%; height: 100%;" src="https://poplme.co/assets/frontend/images/icons/facebookicon.png">
+                                            Facebook
+                                        </a>
+                                    </div>
+
+                                    <div class="grid-square add_grid" id="addGrid1">
+                                        <a class="socialTitles add_grid" id="add_grid" onclick="DisplayLinksNew()">
+                                            <img id="add" class="shadow" alt="add social link" style="width: 100%; height: 100%;" src="https://poplme.co/assets/frontend/images/icons/addLinkBlack.png">
+                                            Add link
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" name="sAction" value="UpdateMember">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div onclick="BuyPoplPro()" id="test" style="text-align: center; margin-top: 20px;"><a><img alt="Popl logo" class="rippllogo" src="https://poplme.co/assets/frontend/images/poplLogoBlack.png"></a></div>
+            <div class="row" style="margin: 0">
+                <div class="col-md-6 col-xs-12 col-lg-6" style="margin: 0 auto; display: block">
+                    <div class="PoweredBy">
+                        <strong> <a class="PoweredBy">Patent Pending <i style=" padding-top: 10px;" class="fa fa-check-circle"></i><br></a></strong>
+                        <!--<a target="_blank" rel="noopener noreferrer" href="https://poplme.co" style="color: #000"><hr class="hr" /><strong style="font-size: 18px; padding-left: 4px;">Popl &copy;</strong></a>-->
+                    </div>
+                </div>
+            </div>
+            <a href="https://popl.co/help" class="faq proxima-nova PoweredBy" style="font-size: 22px; margin-top: 25px">Help Center</a>
+            <br>
+            <br>
+        </div>
+        <!-- <form method="post" action="https://poplme.co" enctype="multipart/form-data" id="UploadProfilePhoto">
+        <input type="file" accept="image/*" name="file" style="display: none" id="sPhoto">
+        <input type="hidden" name="sAction" value="UploadProfilePhoto">-->
+
+        <div class="swiper-slide-shadow-left" style="opacity: 0;"></div><div class="swiper-slide-shadow-right" style="opacity: 0;"></div>
+    </div>
+   

@@ -22,75 +22,134 @@ namespace Totssy.Controllers
         }
         public async Task<IActionResult> products()
         {
-            if (Auth != null)
+            if (Auth == null)
             {
-                ViewBag.user = Auth.User.Email;
+                return RedirectToAction("lOGIN");
             }
             else
             {
-                ViewBag.user = "";
+
+                var products = await productRepos.GetProducts();
+                return View(products.ToList());
             }
-           
-            var products =await productRepos.GetProducts();
-            return View(products.ToList());
         }
         public async Task<IActionResult> product(string Name)
         {
-            var product =await productRepos.GetProduct(Name);
-            return View(product);
+            if (Auth == null)
+            {
+                return RedirectToAction("lOGIN");
+            }
+            else
+            {
+                var product = await productRepos.GetProduct(Name);
+                return View(product);
+            }
         }
         public IActionResult Addproduct()
         {
+            if (Auth == null)
+            {
+                return RedirectToAction("lOGIN");
+            }
+            else
+            {
 
-            return View();
+                return View();
+            }
         }
         [HttpPost]
         public async Task<IActionResult> Addproduct(ProductViewModel product)
         {
-            var stream = product.Img.OpenReadStream();
-            string r="";
-            if (product.Img.Length > 0)
+            if (Auth == null)
             {
-                var upload = new FirebaseStorage(
-                        Bucket
-
-                        ).Child("Pics")
-                        .Child(product.Name)
-                       .PutAsync(stream);
-
-               r  = await upload;
+                return RedirectToAction("lOGIN");
             }
-                productRepos.Addproduct(product,r);
-            
+            else
+            {
+                var stream = product.Img.OpenReadStream();
+                string r = "";
+                if (product.Img.Length > 0)
+                {
+                    var upload = new FirebaseStorage(
+                            Bucket
+
+                            ).Child("Pics")
+                            .Child(product.Name)
+                           .PutAsync(stream);
+
+                    r = await upload;
+                }
+                productRepos.Addproduct(product, r);
+
 
                 return View();
+            }
         }
         [HttpPost]
         public IActionResult Deleteproduct(string Name)
         {
+          
             productRepos.DeleteProduct(Name);
             return RedirectToAction("Products");
         } 
         public async Task<IActionResult> Editproduct(string Name)
         {
-           
-           var product= await productRepos.GetProduct(Name);
-            ViewBag.name = Name;
-            ViewBag.img = product.Img;
-            ProductViewModel p = new ProductViewModel();
-            p.Img = null;
-            p.Name = product.Name;
-            p.Price = product.Price;
-            p.Quantity = product.Quantity;
-            return View(p);
+            if (Auth == null)
+            {
+                return RedirectToAction("lOGIN");
+            }
+            else
+            {
+                var product = await productRepos.GetProduct(Name);
+                ViewBag.name = Name;
+                ViewBag.img = product.Img;
+                ProductViewModel p = new ProductViewModel();
+                p.Img = null;
+                p.Name = product.Name;
+                p.Price = product.Price;
+                p.Quantity = product.Quantity;
+                return View(p);
+            }
         }
         [HttpPost]
-        public IActionResult Editproduct(string n,string img, ProductViewModel product)
+        public async Task<IActionResult> Editproduct(string n,string img, ProductViewModel product)
         {
-            productRepos.EditProduct(n,img, product);
-            return RedirectToAction("Products");
+            if (Auth == null)
+            {
+               return RedirectToAction("lOGIN");
+            }
+            else
+            {
+                var stream = product.Img.OpenReadStream();
+                string r = "";
+                if (product.Img.Length > 0)
+                {
+                    var upload = new FirebaseStorage(
+                            Bucket
+
+                            ).Child("Pics")
+                            .Child(product.Name)
+                           .PutAsync(stream);
+
+                    r = await upload;
+                }
+
+                productRepos.EditProduct(n, r, product);
+                return RedirectToAction("Products");
+            }
         }
         public IActionResult Login()
+        {
+            
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Logout()
+        {
+            Auth = null;
+            return RedirectToAction("Index","Home");
+        }
+        public IActionResult error()
         {
             
             return View();

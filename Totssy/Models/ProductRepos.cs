@@ -36,11 +36,24 @@ namespace Totssy.Models
 
         async  void Iproduct.DeleteProduct(string Name)
         {
+            var upload = new FirebaseStorage(
+                     Bucket
+
+                     ).Child("Pics")
+                     .Child(Name)
+                    .DeleteAsync();
             await db.Collection("Product").Document(Name).DeleteAsync();
+
         }
 
         async void Iproduct.EditProduct(string Name,string img, ProductViewModel product)
         {
+            var upload = new FirebaseStorage(
+                     Bucket
+
+                     ).Child("Pics")
+                     .Child(Name)
+                    .DeleteAsync();
             await db.Collection("Product").Document(Name).DeleteAsync();
             Product p = new Product();
             p.Name = product.Name;

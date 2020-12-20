@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Editproduct">
+        <form asp-action="Editproduct" enctype="multipart/form-data">
             <input type="hidden" value="@ViewBag.name" name="n" /> 
             <input type="hidden" value="@ViewBag.img" name="img" />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
