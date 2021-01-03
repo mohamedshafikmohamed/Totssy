@@ -14,8 +14,8 @@ namespace Totssy.Controllers
     {
         private readonly Iproduct productRepos;
         private static FirebaseAuthLink Auth = null;
-        private static string Bucket = "totssy-test.appspot.com";
-        private static string ApiKey = "AIzaSyCeEVEbEiThF8rybI66Hk2Ky4mz_uWt0ao";
+        private static string Bucket = "totssy-48fc7.appspot.com";
+        private static string ApiKey = "AIzaSyBn4pshdZBeGf0DuoLPETyc6wjdYuRBzhc";
         public ProductController(Iproduct _productRepos)
         {
              productRepos = _productRepos;
@@ -73,7 +73,7 @@ namespace Totssy.Controllers
                     var upload = new FirebaseStorage(
                             Bucket
 
-                            ).Child("Pics")
+                            ).Child("Products")
                             .Child(product.Name)
                            .PutAsync(stream);
 
@@ -127,7 +127,7 @@ namespace Totssy.Controllers
                     var upload = new FirebaseStorage(
                             Bucket
 
-                            ).Child("Pics")
+                            ).Child("Products")
                             .Child(product.Name)
                            .PutAsync(stream);
 

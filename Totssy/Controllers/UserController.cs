@@ -5,13 +5,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Totssy.Models;
 
 namespace Totssy.Controllers
 {
     public class UserController : Controller
     {
+        private readonly Iuser UserRepos;
         private static FirebaseAuthLink Auth = null;
         private static string ApiKey = "AIzaSyCeEVEbEiThF8rybI66Hk2Ky4mz_uWt0ao";
+        public UserController(Iuser _UserRepos)
+        {
+            UserRepos = _UserRepos;
+        }
         public IActionResult Index()
         {
             return View();
@@ -41,10 +47,10 @@ namespace Totssy.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Register(string x)
+        public async Task<IActionResult> Register(Registerviewmodel  x)
         {
-            var auth = new FirebaseAuthProvider(new FirebaseConfig(ApiKey));
-            await auth.CreateUserWithEmailAndPasswordAsync("employee.Email", "employee.Password");
+            Models.User u = new Models.User();
+            UserRepos.AddProfile(u, "hhh", x);
             return View();
         }
         public IActionResult LogIn()
