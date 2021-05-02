@@ -2,7 +2,26 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+<script>
+    var d;
 
+        function Get() {
+
+            $.ajax({
+                type: "GET",
+                url: "https://localhost:44304/api/Product/GetProducts",
+                contentType: "application/json",
+                dataType: 'json',
+                success: function (result) {
+                    d = result;
+                    console.log(result);
+                   
+                }
+            });
+        }
+    
+
+</script>
 <div class="row" style="margin-top:150px;">
     @{
         foreach (var item in Model)
@@ -20,7 +39,10 @@
             </div>
 
         }
-
+    <button onclick="Get()">gh</button>
+    <h1 id="ff">
+        
+    </h1>
 
     }
 </div>
